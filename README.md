@@ -43,15 +43,19 @@
   ```
   Run request and recieve similar response (during the process SK ID Solutions DEMO services has simulated entering PIN code and prepared the response):
   ![image](https://github.com/user-attachments/assets/981ff075-154f-4b8b-a13d-7f9c28b33930)
+  
   Copy "sessionCode" value to be used in next request
 - setup and run 03. Get Signing Status request
   ![image](https://github.com/user-attachments/assets/054daeb6-00a9-41f2-831b-45e5e887f4a4)
+  
   Put "sessionCode" value into API URL: api/signing/smart/session/[PUT_SESSION_CODE_HERE]/status
   Run request and recieve response:
   ![image](https://github.com/user-attachments/assets/4f8503e4-eaf7-4b61-8a1a-58c91abd45e3)
+  
   Such response means document was signed with DEMO Smart-ID signature.
 - setup and run 04. Download Signed document
   ![image](https://github.com/user-attachments/assets/3269eb2e-8e3f-41e6-8d16-0018761ee4fe)
+  
   Put document id from request 01. to API URL: /api/document/[PUT_DOCUMENT_ID_HERE]/download. As a result signed document is downloaded:
   ![image](https://github.com/user-attachments/assets/f0786974-cd56-439f-a679-8ad1a5380e53)
 
