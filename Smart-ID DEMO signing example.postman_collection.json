@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "bcb3145e-4542-43ec-8b45-94f4dbe99d5a",
+		"name": "Smart-ID DEMO signing example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4553236"
+	},
+	"item": [
+		{
+			"name": "01. Create Document",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCode\" : \"020100-29990\",\r\n    \"country\": \"LV\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:88/api/document/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "88",
+					"path": [
+						"api",
+						"document",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02. Initiate SmartID DEMO Signing",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"pm.collectionVariables.set(\"sessionCode\", jsonData.sessionCode);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "X-Request-ID",
+						"value": "11111111111111111111111111111",
+						"type": "text"
+					},
+					{
+						"key": "X-Session-ID",
+						"value": "2222222222222222222222",
+						"type": "text"
+					},
+					{
+						"key": "technical_data",
+						"value": "ewogICAgInZhbHVlIjogIlRlY2huaWNhbCBEYXRhIgp9",
+						"type": "text"
+					},
+					{
+						"key": "OTCSTICKET",
+						"value": "NknNwvgVXRpMHLL+qPLe/uOK9xsIjXRwzTH91YHYpGvbX8Ww5fXXODWBjFwqnebMnft1NextUAGlJOL2J8rSz2kvl4fJ1IQn6ZE8nfEFR5JGbVZ8P+3aJ7/v6AfOFlZFnHddvzzJIms=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"country\": \"EE\",\r\n  \"idCode\": \"50001029996\",  \r\n  \"displayText\": \"Please sign document\",\r\n  \"adisplayTextLong\": \"Please sign document by Signing Services\",\r\n  \"pdfSignatureIsVisible\": false,\r\n   \"font\": \"classpath:OpenSans-Bold.ttf\",\r\n   \"signerTextVerticalPosition\": \"BOTTOM\",\r\n   \"signatureImageScaling\": \"CENTER\",\r\n  \"pdfSignatureVisuals\": {\r\n    \"signatureFieldHeight\": \"100\",\r\n    \"signatureFieldWidth\": \"200\",    \r\n    \"signaturePage\": 10000,    \r\n    \"signatureXAxis\": 50,\r\n    \"signatureYAxis\": -100,\r\n    \"signatureZoom\": 50,\r\n    \"sigMod2XIndent\": 300,\r\n    \"sigMod2YIndent\": 50,\r\n    \"signatureImage\": \"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\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{containerserviceurl}}/api/signing/smart/document/{{documentid}}/sign",
+					"host": [
+						"{{containerserviceurl}}"
+					],
+					"path": [
+						"api",
+						"signing",
+						"smart",
+						"document",
+						"{{documentid}}",
+						"sign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03. Get Signing Status",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "04. Download Signed document",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/mihai/OneDrive/Desktop/Mihails/Work/Test docs/DM Test Invoice - 4.pdf",
+							"disabled": true
+						},
+						{
+							"key": "documentData\n",
+							"value": "{\n\"objectName\": \"1r1d324324d1ddddrddddffdddsssrrfffccceeeee\",\n\"contentType\": \"application/pdf\",\n\"documentType\": \"Doc\",\n\"documentFilename\": \"ee111ddsssddedeedweede.txt\"\n}",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/document/b6a083c9-5f86-4324-b905-b3881d4fbbca/download",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"document",
+						"b6a083c9-5f86-4324-b905-b3881d4fbbca",
+						"download"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "sessionCode",
+			"value": ""
+		}
+	]
+}
