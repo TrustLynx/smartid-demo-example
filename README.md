@@ -48,7 +48,7 @@
 - setup and run 03. Get Signing Status request
   ![image](https://github.com/user-attachments/assets/054daeb6-00a9-41f2-831b-45e5e887f4a4)
   
-  Put "sessionCode" value into API URL: api/signing/smart/session/[PUT_SESSION_CODE_HERE]/status
+  Put "sessionCode" value into API URL: api/signing/smart/session/[PUT_SESSION_CODE_HERE]/status.
   Run request and recieve response:
   ![image](https://github.com/user-attachments/assets/4f8503e4-eaf7-4b61-8a1a-58c91abd45e3)
   
