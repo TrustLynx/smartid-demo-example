@@ -15,7 +15,8 @@
 ## Testing Smart-ID DEMO signing using Postman
 - import repository file **Smart-ID DEMO signing example.postman_collection.json** into your Postman instance:
 ![image](https://github.com/user-attachments/assets/dd294616-f8ec-48d5-a52e-66c043e29336)
-In current exampple **localhost:88** is Archive Service and **localhost:86** is Container Service ports.
+
+  In current example **localhost:88** is Archive Service and **localhost:86** is Container Service ports.
 - setup and run 01. Create Document request:
       ![image](https://github.com/user-attachments/assets/000c8450-7249-4c4d-b4cd-787ded8f32b0)
     - select file to put in a "file" field. In this example let`s use simple PDF file.
