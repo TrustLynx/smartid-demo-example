@@ -18,7 +18,7 @@
 
   In current example **localhost:88** is Archive Service and **localhost:86** is Container Service ports.
 - setup and run 01. Create Document request:
-      ![image](https://github.com/user-attachments/assets/000c8450-7249-4c4d-b4cd-787ded8f32b0)
+      ![image](https://github.com/user-attachments/assets/b97b68b1-3375-40e2-b7f2-db982436974d)
     - select file to put in a "file" field. In this example let`s use simple PDF file.
     - field "documentData" should have static value:
       ```
