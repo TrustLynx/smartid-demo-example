@@ -16,4 +16,16 @@
 - import repository file **Smart-ID DEMO signing example.postman_collection.json** into your Postman instance:
 ![image](https://github.com/user-attachments/assets/dd294616-f8ec-48d5-a52e-66c043e29336)
 - setup 01. Create Document request:
--- select file to put in a file field. In this example let`s use simple PDF file.
+      ![Uploading image.png…]()
+    - select file to put in a "file" field. In this example let`s use simple PDF file.
+    - field "documentData" should have static value:
+      ```
+      {
+      "objectName": "testObject",
+      "contentType": "application/pdf",
+      "documentType": "DMSSDoc",
+      "documentFilename": "test.txt"
+      }
+      ```
+   - run request and recieve document id from response:
+     ![image](https://github.com/user-attachments/assets/e51f0af5-5f3b-432d-a292-0e5546717f90)
