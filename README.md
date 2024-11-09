@@ -14,6 +14,7 @@
 - docker will download necessary image versions and auto-start the containers
 ## Testing Smart-ID DEMO signing using Postman
 - import repository file **Smart-ID DEMO signing example.postman_collection.json** into your Postman instance:
+  
   ![image](https://github.com/user-attachments/assets/dd294616-f8ec-48d5-a52e-66c043e29336)
 
   In current example **localhost:88** is Archive Service and **localhost:86** is Container Service ports.
