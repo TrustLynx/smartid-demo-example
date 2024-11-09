@@ -43,8 +43,8 @@ springdoc:
 auth-providers:
   - name: ot_credentials
     type: "CREDENTIAL"
-    userName: "Admin"
-    password: "inlynxwetrust777"
+    userName: "user"
+    password: "password"
 
 authentication:
   documentAccess:
@@ -60,7 +60,7 @@ authentication:
     systemCodeNameInClaim: appName
     authorizationClaim: appName
     private: false
-    secret: "0a8d927b56cb9a1ebfdda90b3dd3f07a8bd8a747d6ce02bcc55f36086791dd2b0a8d927b56cb9a1ebfdda90b3dd3f07a8bd8a747d6ce02bcc55f36086791dd2b0a8d927b56cb9a1ebfdda90b3dd3f07a8bd8a747d6ce02bcc55f36086791dd2b"
+    secret: "secret"
     allowedClockSkewSeconds: 100000000
 certificateService:
   username: test
